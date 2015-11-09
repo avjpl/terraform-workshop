@@ -6,6 +6,15 @@ variable "subdomain" {
   // default = "..."
 }
 
+// This sets up the credentials for interacting with DNSimple. Normally you
+// would use environment variables for these values for security, but for the
+// purposes of this tutorial it is easier to hard-code the value and provide
+// access to an existing domain.
+provider "dnsimple" {
+  email = "sethvargo+terraform@gmail.com"
+  token = "..."
+}
+
 // This resource will create a new DNS record for the subdomain of your
 // choosing from the variable above.
 resource "dnsimple_record" "web" {
@@ -37,4 +46,3 @@ output "consul" { value = "${dnsimple_record.consul.hostname}:8500" }
 // Assuming everything looks correct, you can run the apply by running
 // `terraform apply 06-dnsimple-record`. This will create the subdomain and
 // point it at the CNAME of your load balancer on EC2.
-
