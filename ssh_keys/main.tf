@@ -21,5 +21,5 @@ resource "aws_key_pair" "mod" {
 // These are outputs from the module. They are available as attributes when
 // we reference the module as a variable.
 output "key_name"         { value = "${aws_key_pair.mod.key_name}" }
-output "private_key_path" { value = "${path.module}/${var.name}.pem" }
-output "public_key_path"  { value = "${path.module}/${var.name}.pub" }
+output "private_key_path" { value = "${path.module}/terraform-tutorial.pem" }
+output "public_key_path"  { value = "${path.module}/terraform-tutorial.pub" }

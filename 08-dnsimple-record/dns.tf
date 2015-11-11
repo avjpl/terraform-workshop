@@ -11,7 +11,7 @@ variable "subdomain" {
 // purposes of this tutorial it is easier to hard-code the value and provide
 // access to an existing domain.
 provider "dnsimple" {
-  email = "sethvargo+terraform@gmail.com"
+  email = "..."
   token = "..."
 }
 

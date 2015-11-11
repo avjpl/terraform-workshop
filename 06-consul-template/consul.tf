@@ -12,4 +12,4 @@ module "consul" {
   private_key_path = "${module.ssh_keys.private_key_path}"
 }
 
-output "consul-address" { value = "${module.consul.address}:8500" }
+output "consul-ui" { value = "${module.consul.ip}:8500/ui" }

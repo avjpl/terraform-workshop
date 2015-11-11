@@ -10,7 +10,7 @@ sudo apt-get install -y unzip
 
 echo "Fetching Consul..."
 cd /tmp
-wget https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip -O consul.zip
+curl -L -o consul.zip https://releases.hashicorp.com/consul/0.5.2/consul_0.5.2_linux_amd64.zip
 
 echo "Installing Consul..."
 unzip consul.zip >/dev/null
@@ -22,7 +22,7 @@ sudo mkdir -p /etc/service
 
 echo "Fetching Consul UI..."
 cd /tmp
-wget https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip -O consul-ui.zip
+curl -L -o consul-ui.zip https://releases.hashicorp.com/consul/0.5.2/consul_0.5.2_web_ui.zip
 
 echo "Installing Consul UI..."
 unzip consul-ui.zip >/dev/null

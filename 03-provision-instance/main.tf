@@ -33,8 +33,8 @@ resource "aws_instance" "web" {
   // an implementation detail of an operating system and the way it runs on the
   // cloud platform; this is not a Terraform bug.
   provisioner "remote-exec" {
-    inline = [
-      "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do sleep 1; done"
+    scripts = [
+      "${path.module}/scripts/wait-for-ready.sh"
     ]
   }
 

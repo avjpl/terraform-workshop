@@ -15,6 +15,12 @@ resource "aws_instance" "server" {
 
   tags { Name = "${var.name}-${count.index}" }
 
+  provisioner "remote-exec" {
+    scripts = [
+      "${path.module}/scripts/wait-for-ready.sh"
+    ]
+  }
+
   provisioner "file" {
     source      = "${path.module}/scripts/upstart.conf"
     destination = "/tmp/upstart.conf"
@@ -23,12 +29,6 @@ resource "aws_instance" "server" {
   provisioner "file" {
     source      = "${path.module}/scripts/upstart-join.conf"
     destination = "/tmp/upstart-join.conf"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do sleep 1; done",
-    ]
   }
 
   provisioner "remote-exec" {

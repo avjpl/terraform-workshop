@@ -23,7 +23,7 @@ module "consul" {
 
 // This will output the address of the first Consul instance where we can access
 // the Web UI on port 8500.
-output "consul-address" { value = "${module.consul.address}" }
+output "consul-ui" { value = "${module.consul.ip}:8500/ui" }
 
 // Before we can try to plan, we need to tell Terraform to download this new
 // module:

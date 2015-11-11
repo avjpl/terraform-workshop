@@ -30,8 +30,8 @@ resource "aws_instance" "web" {
   }
 
   provisioner "remote-exec" {
-    inline = [
-      "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do sleep 1; done"
+    scripts = [
+      "${path.module}/scripts/wait-for-ready.sh"
     ]
   }
 

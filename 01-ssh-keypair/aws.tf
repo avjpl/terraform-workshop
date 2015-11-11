@@ -13,22 +13,22 @@ provider "aws" {
 }
 
 // This stanza declares a variable named "ami_map" that is a mapping of the
-// Ubuntu 14.10 official hvm:ebs volumes to their region. This is used to
+// Ubuntu 14.04 official hvm:ebs volumes to their region. This is used to
 // demonstrate the power of multi-provider Terraform and also allows this
 // tutorial to be adjusted geographically easily.
 variable "aws_amis" {
   default = {
-    ap-northeast-1  = "ami-48c27448"
-    ap-southeast-1  = "ami-86e3e1d4"
-    ap-southeast-2  = "ami-21eea81b"
-    cn-north-1      = "ami-9871eca1"
-    eu-central-1    = "ami-88333695"
-    eu-west-1       = "ami-c8a5eebf"
-    sa-east-1       = "ami-1319960e"
-    us-east-1       = "ami-d96cb0b2"
-    us-gov-west-1   = "ami-25fc9c06"
-    us-west-1       = "ami-6988752d"
-    us-west-2       = "ami-d9353ae9"
+    ap-northeast-1 = "ami-d886a1b6"
+    ap-southeast-1 = "ami-a17dbac2"
+    eu-central-1   = "ami-99cad9f5"
+    eu-west-1      = "ami-a317ced0"
+    sa-east-1      = "ami-ae44ffc2"
+    us-east-1      = "ami-f7136c9d"
+    us-west-1      = "ami-44b1de24"
+    cn-north-1     = "ami-a664f89f"
+    us-gov-west-1  = "ami-30b8da13"
+    ap-southeast-2 = "ami-067d2365"
+    us-west-2      = "ami-46a3b427"
   }
 }
 
